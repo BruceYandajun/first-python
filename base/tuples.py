@@ -1,0 +1,5 @@
+tuple1 = ('Google', 'Facebook', 'Baidu')
+print(tuple1[0])
+tuple2 = (1,)
+print(type(tuple2))
+print(tuple1 + tuple2)
