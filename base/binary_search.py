@@ -1,10 +1,18 @@
 numbers = [1, 4, 9, 10, 21]
-target = 9
+target = 10
 
-def search (l, t):
-    index = 0
-    for i in l:
-        if i == t:
+
+def search(array, t):
+    left, right = 0, len(array) - 1
+    while left <= right:
+        index = left + (right - left) // 2
+        if array[index] == t:
             return index
-        index += 1
+        elif array[index] < t:
+            left = index + 1
+        else:
+            right = index - 1
+
+
+print(search(numbers, target))
 
