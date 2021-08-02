@@ -1,6 +1,5 @@
-from pandas import Series, DataFrame
-import pandas as pd
 import numpy as np
+from pandas import DataFrame
 
 dict_obj = {
     'key1': ['a', 'b', 'a', 'b', 'a', 'b', 'a', 'a'],

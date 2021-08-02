@@ -1,6 +1,5 @@
-from pandas import Series, DataFrame
-import pandas as pd
 import numpy as np
+from pandas import DataFrame
 
 people = DataFrame(np.random.randn(5, 5), columns=['a', 'b', 'c', 'd', 'e'],
                    index=['Joe', 'Steve', 'Wes', 'Jim', 'Travis'])
