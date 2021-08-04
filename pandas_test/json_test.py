@@ -8,5 +8,6 @@ oth = pd.DataFrame({
     'name': ['a', 'b'],
     'url': ['http', 'www']
 })
-new_df = df.append(other=oth)
+new_df = df.append(other=oth, ignore_index=True)
 print(new_df)
+new_df.to_json('sites_new.json')
