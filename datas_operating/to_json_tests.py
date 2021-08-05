@@ -7,11 +7,11 @@ data = {
 }
 
 df = DataFrame(data)
-# 默认展现，是按columns
+# 默认展现，是按columns; lines如果设置为True，就是一行一行的json数据，不是标准json格式，首尾没有[]
 path = "../output/data"
 df.to_json(path + 'to_json_default.json')
 df.to_json(path + 'to_json_columns.json', orient='columns')
 df.to_json(path + 'to_json_index.json', orient='index')
-df.to_json(path + 'to_json_records.json', orient='records')
+df.to_json(path + 'to_json_records.json', orient='records', lines=True)
 df.to_json(path + 'to_json_values.json', orient='values')
 df.to_json(path + 'to_json_split.json', orient='split')

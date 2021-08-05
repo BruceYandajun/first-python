@@ -1,5 +1,5 @@
 import random
-import modin.pandas as pd
+import pandas as pd
 import time
 import os
 
@@ -8,19 +8,23 @@ start = "2021-07-01"
 # 结束日期
 end = "2021-07-31"
 # 生成的文件
-file_name = "../output/user_operation.csv"
+file_name = "../output/user_operation.json"
 # 每日的数据量
-every_day_count = 50000
-#
-lines = False
+every_day_count = 5
+# lines如果设置为True，就是一行一行的json数据，不是标准json格式，首尾没有[]
+lines = True
 
-os.remove(file_name)
-print("Removed old files ----!")
+try:
+    os.remove(file_name)
+except FileNotFoundError:
+    pass
+else:
+    print("Removed old files {0} ----!".format(file_name))
 
 day_list = pd.date_range(start=start, end=end).tz_localize("UTC")
+df = pd.DataFrame()
 for day in day_list:
     startTimestamp = int(time.mktime(day.timetuple()) * 1000)
-    df = pd.DataFrame()
     for i in range(0, 5):
         data = {
             "startTimestamp": [startTimestamp],
@@ -28,6 +32,6 @@ for day in day_list:
             "bannerShowsNum": [random.randint(0, 5)]
         }
         df = df.append(pd.DataFrame(data), ignore_index=True)
-        df.to_json(file_name, orient="records", lines=lines)
-    print("Day {0}  {1} done ----!".format(day, startTimestamp))
+df.to_json(file_name, orient="records", lines=lines)
+print("Done ----!")
 
