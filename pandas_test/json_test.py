@@ -1,8 +1,8 @@
 import pandas as pd
 
-df = pd.read_json('sites.json')
+df = pd.read_json('../output/data/sites.json')
 print(df)
-df.to_csv("sites.csv")
+df.to_csv("../output/sites.csv")
 oth = pd.DataFrame({
     'id': [10, 11],
     'name': ['a', 'b'],
@@ -10,4 +10,4 @@ oth = pd.DataFrame({
 })
 new_df = df.append(other=oth, ignore_index=True)
 print(new_df)
-new_df.to_json('sites_new.json')
+new_df.to_json('../output/data/sites_new.json')
