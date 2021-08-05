@@ -8,7 +8,7 @@ start = "2021-07-01"
 # 结束日期
 end = "2021-07-31"
 # 生成的文件
-file_name = "user_operation.csv"
+file_name = "../output/user_operation.csv"
 # 每日的数据量
 every_day_count = 50000
 
