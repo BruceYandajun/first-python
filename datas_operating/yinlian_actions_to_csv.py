@@ -5,22 +5,22 @@ import time
 # 开始日期
 start = "2021-08-01"
 # 结束日期
-end = "2021-08-07"
+end = "2021-08-19"
 # 生成的文件
-file_name = "../output/user_operation.csv"
+out_file_name = "../output/yinlian/user_operation.csv"
 # 每日的数据量(最大是5w用户量)
 every_day_max_count = 10
 
 # 用户的list
-user_list = pd.read_json("../output/data/yinlian-user-demo.txt", lines=True)["uid"]
+user_list = pd.read_json("../input/yinlian/yinlian-user-demo.txt", lines=True)["uid"]
 user_count = user_list.count()
 # user_count = 6
 # 物料list
-item_list = pd.read_json("../output/data/yinlian-item-demo.txt", lines=True)["nid"]
+item_list = pd.read_json("../input/yinlian/yinlian-item-demo.txt", lines=True)["nid"]
 item_count = item_list.count()
-# 事件list
-action_types = ["REC", "ENTER", "EXIT", "CLICK", "PRODUCT_CLICK", "PRODUCT_SHOW", "BANNER_CLICK", "BANNER_SHOW", "SEARCH", "SHOW", "LIKE", "SHARE", "CANCEL_LIKE"]
-action_numbers = ["recNum", "enterNum", "exitNum", "clicksNum", "productClicksNum", "productShowsNum", "bannerClicksNum", "bannerShowsNum", "searchNum", "showsNum", "likesNum", "sharingNum", "cancelLikesNum"]
+# 场景list
+scene_codes = ["BANNER", "MINI_PROGRAM", "HOT_ACTIVITY", "PRODUCT_RECOMMEND", "BANK_APPLICATION"]
+action_numbers = ["onlineNum", "recallNum", "showNum", "clickNum", "shareNum", "likeNum"]
 
 s = time.time()
 day_list = pd.date_range(start=start, end=end).tz_localize("UTC")
@@ -35,35 +35,24 @@ for day in day_list:
             "startTimestamp": [startTimestamp],
             "uid": [user_list[i]],
             "ts": [startTimestamp],
-            "nid": [item_list[random.randint(0, item_count - 1)]],
-            "actionType": [action_types[random.randint(0, len(action_types) - 1)]],
+            "nid": [random.choice(item_list)],
+            "sceneCode": [random.choice(scene_codes)],
             "deviceId": ["{}_A0DCEC5C-C5F8-4CD4-94A9".format(i)],
-            action_numbers[0]: [random.randint(0, 50)],
-            action_numbers[1]: [random.randint(0, 50)],
-            action_numbers[2]: [random.randint(0, 50)],
-            action_numbers[3]: [random.randint(0, 50)],
-            action_numbers[4]: [random.randint(0, 50)],
-            action_numbers[5]: [random.randint(0, 50)],
-            action_numbers[6]: [random.randint(0, 50)],
-            action_numbers[7]: [random.randint(0, 50)],
-            action_numbers[8]: [random.randint(0, 50)],
-            action_numbers[9]: [random.randint(0, 50)],
-            action_numbers[10]: [random.randint(0, 50)],
-            action_numbers[11]: [random.randint(0, 50)],
-            action_numbers[12]: [random.randint(0, 50)]
+            "onlineNum": [random.randint(2000, 3000)],
+            "recallNum": [random.randint(1000, 2000)],
+            "showNum": [random.randint(500, 1000)],
+            "clickNum": [random.randint(100, 200)],
+            "shareNum": [random.randint(0, 100)],
+            "likeNum": [random.randint(0, 100)]
         }
         df = df.append(pd.DataFrame(data), ignore_index=True)
         if first:
-            df.to_csv(file_name, header=True, index=False, mode="w")
+            df.to_csv(out_file_name, header=True, index=False, mode="w")
             df = pd.DataFrame()
         first = False
     if not first:
-        df.to_csv(file_name, header=False, index=False, mode="a")
+        df.to_csv(out_file_name, header=False, index=False, mode="a")
     print("Day {0}  {1} done ----!".format(day, startTimestamp))
 
 e = time.time()
-print('Runned %d s' % (e - s))
-
-
-df = pd.read_csv(file_name)
-df.to_json("../output/user_operation.json", orient="records", lines=True)
+print('Ran %d s' % (e - s))

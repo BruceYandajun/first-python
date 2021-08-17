@@ -21,7 +21,20 @@ for day in day_list:
         data = {
             "startTimestamp": [startTimestamp],
             "deviceId": ["{}_A0DCEC5C-C5F8-4CD4-94A9-605CE3856B77".format(i)],
-            "bannerShowsNum": [random.randint(0, 5)]
+            "uid": ["{}_A0DCEC5C-C5F8-4CD4-94A9-605CE3856B77".format(i)],
+            "recNum": [random.randint(0, 5)],
+            "enterNum": [random.randint(0, 5)],
+            "exitNum": [random.randint(0, 5)],
+            "clicksNum": [random.randint(0, 5)],
+            "productClicksNum": [random.randint(0, 5)],
+            "productShowsNum": [random.randint(0, 5)],
+            "bannerClicksNum": [random.randint(0, 5)],
+            "bannerShowsNum": [random.randint(0, 5)],
+            "searchNum": [random.randint(0, 5)],
+            "showsNum": [random.randint(0, 5)],
+            "likesNum": [random.randint(0, 5)],
+            "sharingNum": [random.randint(0, 5)],
+            "cancelLikesNum": [random.randint(0, 5)]
         }
         df = df.append(pd.DataFrame(data), ignore_index=True)
         if first:
@@ -33,4 +46,4 @@ for day in day_list:
     print("Day {0}  {1} done ----!".format(day, startTimestamp))
 
 e = time.time()
-print('Runned %d s' % (e - s))
+print('Ran %d s' % (e - s))

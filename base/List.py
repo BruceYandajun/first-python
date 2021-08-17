@@ -1,4 +1,6 @@
 # 列表可以放不同类型的元素
+import random
+
 list1 = [1, 'abc', 0.5]
 print(list1)
 print(list1[0:])
@@ -27,4 +29,8 @@ myList = [1, 5, 9]
 for i in myList:
     total += i
 print('Total of myList is %s' % total)
+
+
+print(random.choice(range(1, 2)))
+
 
