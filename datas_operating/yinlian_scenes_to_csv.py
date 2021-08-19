@@ -5,7 +5,7 @@ import time
 # 开始日期
 start = "2021-08-01"
 # 结束日期
-end = "2021-08-19"
+end = "2021-08-30"
 # 生成的文件
 out_file_name = "../output/yinlian/user_operation.csv"
 # 每日的数据量(最大是5w用户量)
@@ -47,10 +47,12 @@ for day in day_list:
         }
         df = df.append(pd.DataFrame(data), ignore_index=True)
         if first:
+            # 第一行覆盖写入
             df.to_csv(out_file_name, header=True, index=False, mode="w")
             df = pd.DataFrame()
         first = False
     if not first:
+        # 第二行之后追加写入
         df.to_csv(out_file_name, header=False, index=False, mode="a")
     print("Day {0}  {1} done ----!".format(day, startTimestamp))
 
