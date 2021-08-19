@@ -35,8 +35,8 @@ for day in day_list:
             "likesNum": [random.randint(0, 5)],
             "sharingNum": [random.randint(0, 5)],
             "cancelLikesNum": [random.randint(0, 5)],
-            "stayDuration": [random.randint(0, 100)],
-            "enterDuration": [random.randint(0, 500)]
+            "stayDuration": [random.randint(0, 100*1000)],
+            "enterDuration": [random.randint(0, 500*1000)]
         }
         df = df.append(pd.DataFrame(data), ignore_index=True)
         if first:
