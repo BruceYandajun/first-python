@@ -5,7 +5,7 @@ import time
 # 开始日期
 start = "2021-08-01"
 # 结束日期
-end = "2021-08-31"
+end = "2021-08-20"
 # 生成的文件
 file_name = "../output/yinlian/item_operation_daily_stats.csv"
 # 单位数据量级
@@ -36,9 +36,9 @@ for day in day_list:
             "channel": [random.choice(channel_list)],
             "sharingNum": [random.randint(0, 5 * amount_unit)],
             "clickNums": [random.randint(0, 5 * amount_unit)],
-            "likesNum": [random.randint(0, 5 * amount_unit)],
-            "cancelLikesNum": [random.randint(0, 5 * amount_unit)],
-            "showNums": [random.randint(0, 5 * amount_unit)],
+            "likesNum": [random.randint(2, 5 * amount_unit)],
+            "cancelLikesNum": [random.randint(0, 1 * amount_unit)],
+            "showsNum": [random.randint(5, 10 * amount_unit)],
             "clicksNum": [random.randint(0, 5 * amount_unit)]
         }
         df = df.append(pd.DataFrame(data), ignore_index=True)

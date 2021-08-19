@@ -5,7 +5,7 @@ import time
 # 开始日期
 start = "2021-08-01"
 # 结束日期
-end = "2021-08-31"
+end = "2021-08-20"
 # 生成的文件
 file_name = "../output/yinlian/product_operation_daily_stats.csv"
 # 单位数据量级
