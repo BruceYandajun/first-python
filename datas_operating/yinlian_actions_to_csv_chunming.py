@@ -7,7 +7,7 @@ start = "2021-08-01"
 # 结束日期
 end = "2021-08-07"
 # 生成的文件
-file_name = "../output/user_operation.csv"
+file_name = "../output/user_operation_chunming.csv"
 # 每日的数据量(最大是5w用户量)
 every_day_max_count = 10
 

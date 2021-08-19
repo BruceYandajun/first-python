@@ -7,9 +7,9 @@ start = "2021-08-01"
 # 结束日期
 end = "2021-08-30"
 # 生成的文件
-out_file_name = "../output/yinlian/user_operation.csv"
-# 每日的数据量(最大是5w用户量)
-every_day_max_count = 10
+out_file_name = "../output/yinlian/user_operation_scenes.csv"
+# 单位数据量级
+amount_unit = 100
 
 # 用户的list
 user_list = pd.read_json("../input/yinlian/yinlian-user-demo.txt", lines=True)["uid"]
@@ -38,12 +38,12 @@ for day in day_list:
             "nid": [random.choice(item_list)],
             "sceneCode": [random.choice(scene_codes)],
             "deviceId": ["{}_A0DCEC5C-C5F8-4CD4-94A9".format(i)],
-            "onlineNum": [random.randint(2000, 3000)],
-            "recallNum": [random.randint(1000, 2000)],
-            "showNum": [random.randint(500, 1000)],
-            "clickNum": [random.randint(100, 200)],
-            "shareNum": [random.randint(0, 100)],
-            "likeNum": [random.randint(0, 100)]
+            "onlineNum": [random.randint(20 * amount_unit, 30 * amount_unit)],
+            "recallNum": [random.randint(10 * amount_unit, 20 * amount_unit)],
+            "showNum": [random.randint(5 * amount_unit, 10 * amount_unit)],
+            "clickNum": [random.randint(1 * amount_unit, 2 * amount_unit)],
+            "shareNum": [random.randint(0, 1 * amount_unit)],
+            "likeNum": [random.randint(0, 1 * amount_unit)]
         }
         df = df.append(pd.DataFrame(data), ignore_index=True)
         if first:
