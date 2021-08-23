@@ -2,6 +2,9 @@
 
 val=`expr 1 + 1`
 echo "sum is ${val}"
+var=$((1 + 1))
+echo "sum is ${val}"
+
 
 
 a=10
