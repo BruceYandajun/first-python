@@ -5,7 +5,7 @@ import time
 # 开始日期
 start = "2021-08-01"
 # 结束日期
-end = "2021-08-20"
+end = "2021-09-17"
 # 生成的文件
 file_name = "../output/yinlian/searching_daily_top_keywords.csv"
 # 单位数据量级
