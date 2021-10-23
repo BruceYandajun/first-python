@@ -1,0 +1,6 @@
+setuptools~=41.2.0
+blackhole~=2.1.19
+modin~=0.8.3
+ray~=1.1.0
+pandas~=1.1.5
+numpy~=1.21.1

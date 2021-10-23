@@ -12,3 +12,4 @@ print(user_count // 2)
 # print(user_list["uid"].count())
 
 
+print(random.random())

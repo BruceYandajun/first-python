@@ -8,6 +8,7 @@ print('-------------------')
 print(os.getcwd())
 
 print(math.floor(1.2))
+print(math.ceil(1.4))
 
 print(random.choice([3, 1, 2]))
 
