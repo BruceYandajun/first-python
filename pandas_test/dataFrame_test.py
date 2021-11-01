@@ -21,3 +21,12 @@ print(len(df.index))
 print(df.shape[0])
 # fasted
 print(df[df.columns[0]].count())
+
+df = pd.read_json("../input/data.json", lines=True)
+print(df)
+df = df[["score", "name"]]
+print(df)
+print(type(df))
+d = df.to_dict(orient="records")
+print(type(d))
+print(d)
