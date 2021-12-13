@@ -12,10 +12,9 @@ print(math.ceil(1.4))
 
 print(random.choice([3, 1, 2]))
 
-print(random.randint(0, 9))  # 生成0 ~ 9之间的随机数(包含9)
+print(random.randint(0, 1))  # 生成0 ~ 9之间的随机数(包含9)
 
 print(date.today())
 
 print(sys.path[1])
-
 

@@ -9,7 +9,7 @@ end = "2021-07-31"
 # 生成的文件
 file_name = "../output/user_operation.csv"
 # 每日的数据量
-every_day_count = 50000
+every_day_count = 50
 
 s = time.time()
 day_list = pd.date_range(start=start, end=end).tz_localize("UTC")

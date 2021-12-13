@@ -25,7 +25,7 @@ m.reverse()
 print(m)
 
 total = 0
-myList = [1, 5, 9]
+myList = [1, 5]
 for i in myList:
     total += i
 print('Total of myList is %s' % total)
@@ -33,4 +33,6 @@ print('Total of myList is %s' % total)
 
 print(random.choice(range(1, 2)))
 
-
+print(myList)
+myList.pop(1)
+print(myList)
