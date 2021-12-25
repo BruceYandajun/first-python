@@ -1,0 +1,5 @@
+snapshot:
+  conditions:
+    % for item in condition_fields:
+    - field: ${item}
+    % endfor
