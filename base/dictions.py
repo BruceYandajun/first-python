@@ -22,3 +22,10 @@ for key in my_dict:
     print(f"{key}-{my_dict[key]}")
 
 print(random.choice(list(my_dict.keys())))
+
+my_dict = {"a": None, "b": "b", "c": "c"}
+print(len(my_dict))
+print("a" in my_dict)
+
+new_list = [v for v in my_dict.values() if v]
+print(new_list)

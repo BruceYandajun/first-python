@@ -1,5 +1,6 @@
 a = 2
-print(eval("a * a"))
+type_ = "=="
+print(eval(f"a {type_} a"))
 
 
 def method(n):
@@ -7,14 +8,14 @@ def method(n):
 
 
 b = "Bruce"
-e = eval("method(b)")
+e = eval(f"method(b)")
 print(e)
 
 operator = "+"
 
 c = 1
 d = 2
-e = eval(f"c{operator}d")
+e = eval(f"{c} {operator} d")
 print(e)
 
 
@@ -27,3 +28,13 @@ class User:
 
 eval(f"User.hello(b)")
 
+
+def is_num(_str):
+    return str(_str).replace(".", "", 1).isdigit()
+
+
+s = "123.45"
+print(is_num(s))
+
+t = "('a', 'b')"
+print(type(eval(t)))

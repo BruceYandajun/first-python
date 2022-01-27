@@ -30,9 +30,16 @@ for i in myList:
     total += i
 print('Total of myList is %s' % total)
 
-
 print(random.choice(range(1, 2)))
 
 print(myList)
 myList.pop(1)
 print(myList)
+
+ll = []
+if not ll:
+    print("list is empty")
+list1 = ["a", "b"]
+list2 = ["c", "d"]
+list3 = list1 + list2
+print(list3)

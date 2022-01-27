@@ -30,3 +30,6 @@ def replace_str_between_brackets(old_str):
 
 
 print(replace_str_between_brackets(my_str))
+
+my_str = ""
+print(not my_str)

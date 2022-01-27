@@ -1,8 +1,11 @@
 import pandas as pd
 
-a = [1, 2, 3]
+set1 = {1}
+set2 = {2}
+print(type(set1))
+a = [1, 2, 2, 3]
 mySeries = pd.Series(a)
-print(mySeries)
+print(mySeries.nunique())
 
 a = ["Google", "Runoob", "Baidu"]
 mySeries = pd.Series(a, index=['x', 'y', 'z'])
