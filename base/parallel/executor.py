@@ -17,4 +17,3 @@ if __name__ == "__main__":
     future_map = [pool.submit(func, num) for num in nums]
     result = [r for r in as_completed(future_map)]
     print(result)
-    print(type(result))
