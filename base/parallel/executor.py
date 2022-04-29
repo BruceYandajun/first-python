@@ -1,19 +1,25 @@
-from concurrent.futures.process import ProcessPoolExecutor
 import time
+from concurrent.futures.process import ProcessPoolExecutor
 from concurrent.futures import as_completed
-
-
-def func(a):
-    time.sleep(5)
-    print(a)
-    return a
-
 
 pool = ProcessPoolExecutor()
 
-my_list = ["a", "b", "c"]
-nums = [i for i in my_list]
+
+def func(num, b):
+    time.sleep(5)
+    print(f"num={num}, b={b}")
+    return num
+
+
+def main():
+    nums = [i for i in range(5)]
+    a = 5
+    fs = {pool.submit(func, num, a) for num in nums}
+    results = [f.result() for f in as_completed(fs)]
+    print(results)
+    return results
+
+
 if __name__ == "__main__":
-    future_map = [pool.submit(func, num) for num in nums]
-    result = [r for r in as_completed(future_map)]
-    print(result)
+    future = pool.submit(main)
+    print(future.result())

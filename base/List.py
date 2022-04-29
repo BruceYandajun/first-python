@@ -42,4 +42,23 @@ if not ll:
 list1 = ["a", "b"]
 list2 = ["c", "d"]
 list3 = list1 + list2
-print(list3)
+print(list1)
+
+my_list = [1, 5, 7]
+print("01" in my_list)
+
+
+def eq(a):
+    return a > 1
+
+
+c = filter(eq, [1, 2])
+print(c)
+
+
+def is_odd(n):
+    return n % 2 == 1
+
+
+newlist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+print(newlist)

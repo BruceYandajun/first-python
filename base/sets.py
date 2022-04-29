@@ -1,4 +1,6 @@
 import copy
+import collections
+
 
 # s1 = {'a', 'b', 'c', 'a'}
 # print(s1)
@@ -73,6 +75,15 @@ def split_groups(merge_dict):
     return outer_dict
 
 
+def merge_map(dicts):
+    super_dict = collections.defaultdict(map)
+    for d in dicts:
+        for k, v in d.items():
+            for i, j in v.items():
+                super_dict[k][i].append(j)
+    return super_dict
+
+
 g1 = {
     "2021-10-11": {"uv": {"a", "b"}}, "2021-10-12": {"pv": {"a"}}
 }
@@ -81,3 +92,6 @@ g2 = {
 }
 
 print(merge_two_unique_groups(g1, g2))
+
+dd = [g1, g2]
+print(merge_map(dd))
