@@ -1,0 +1,7 @@
+
+import rank_pb2
+
+data = b'\x1a 50ef09812769423eb73537a42c722488\"\x1f\xe5\xa8\x81\xe6\x9c\x9b\xe4\xbb\xa5\xe5\x90\x8e\xe5\xa4\xa7\xe5\xad\xa6\xe7\xa7\xaf\xe5\x88\x86\xe5\xbe\x97\xe5\x88\xb0.*\n16593384422\n1661930448:\x0274B\x0247J\x0296R\x017Z9/data/images/dcoe9c78a52c-e20a-4be9-adc1-597df47fe57c.pngb\x1aCN:220000:220200;\xe5\x90\x89\xe6\x9e\x97\xe5\xb8\x82j\x06220200r\x04foodz\x011'
+user_info = rank_pb2.MsgClass.UserInfoClass()
+user_info.ParseFromString(data)
+print(user_info)

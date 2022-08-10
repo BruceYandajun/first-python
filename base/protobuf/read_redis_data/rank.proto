@@ -1,0 +1,73 @@
+syntax = "proto2";
+    package rank_pb;
+    message Dataset {
+      repeated MsgClass msg = 1;
+    }
+    message MsgClass{
+      message UserInfoClass{
+//        optional string uid = 1;
+//        optional string ext_birth_gender = 2;
+//        optional string age = 3;
+//        optional string carrier = 4;
+//        optional string city = 5;
+//        optional string country = 6;
+//        optional string manufacturer = 7;
+//        optional string network_type = 8;
+//        optional string province = 9;
+//        optional string city_code = 10;
+//        repeated string click_history = 11;
+//        repeated string hist_click_tags = 12;
+//        repeated string tag_list = 13;
+//        optional string chacc_reg_dt = 14;
+//        optional string create_time = 15;
+//        optional string update_time = 16;
+//        optional ItemInfoClass curr_item_info = 1000;
+//        repeated bytes patch = 1001;
+        optional string uid = 1;
+        repeated string click_hist = 2;
+        repeated string show_hist = 3;
+      }
+      optional UserInfoClass user_info = 1;
+      message ItemInfoClass{
+//        optional string nid = 1;
+//        repeated string area_codes = 2;
+//        optional string base_nid = 3;
+//        optional string cate = 4;
+//        optional string cate_score = 5;
+//        optional string color = 6;
+//        optional string display_duration = 7;
+//        optional string url = 8;
+//        optional string min_ios_version = 9;
+//        optional string max_ios_version = 10;
+//        optional string min_android_version = 11;
+//        optional string max_android_version = 12;
+//        optional string content = 13;
+//        repeated string content_seg = 14;
+//        optional string create_time = 15;
+//        optional string end_time = 16;
+//        optional string resource_id = 17;
+//        optional string start_time = 18;
+//        optional string status = 19;
+//        repeated string tag_list = 20;
+//        repeated string tag_weight = 21;
+//        optional string title = 22;
+//        repeated string title_seg = 23;
+//        optional string type = 24;
+//        optional string update_time = 25;
+//        optional string timestamp = 26;
+//        optional string label = 27;
+//        optional string desc = 28;
+//        repeated bytes patch = 1001;
+        optional string is_click = 1;
+        optional string is_show = 2;
+        optional string nid = 3;
+        optional string title = 4;
+        repeated string category = 5;
+        optional string color = 6;
+        optional string create_time = 7;
+        optional string num = 8;
+        optional string area = 9;
+        optional string bd_airec_status = 10;
+      }
+      repeated ItemInfoClass item_info = 2;
+    }
