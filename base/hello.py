@@ -34,3 +34,7 @@ age = 30
 print('%s is %d' % (name, age))
 print('{0} is {1}'.format(name, age))
 
+print(eval('True if 1 else false'))
+
+if "1":
+    print("0")

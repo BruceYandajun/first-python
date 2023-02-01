@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nrank.proto\x12\x07rank_pb\")\n\x07\x44\x61taset\x12\x1e\n\x03msg\x18\x01 \x03(\x0b\x32\x11.rank_pb.MsgClass\"\xf2\x02\n\x08MsgClass\x12\x32\n\tuser_info\x18\x01 \x01(\x0b\x32\x1f.rank_pb.MsgClass.UserInfoClass\x12\x32\n\titem_info\x18\x02 \x03(\x0b\x32\x1f.rank_pb.MsgClass.ItemInfoClass\x1a\x43\n\rUserInfoClass\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x12\n\nclick_hist\x18\x02 \x03(\t\x12\x11\n\tshow_hist\x18\x03 \x03(\t\x1a\xb8\x01\n\rItemInfoClass\x12\x10\n\x08is_click\x18\x01 \x01(\t\x12\x0f\n\x07is_show\x18\x02 \x01(\t\x12\x0b\n\x03nid\x18\x03 \x01(\t\x12\r\n\x05title\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x05 \x03(\t\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x07 \x01(\t\x12\x0b\n\x03num\x18\x08 \x01(\t\x12\x0c\n\x04\x61rea\x18\t \x01(\t\x12\x17\n\x0f\x62\x64_airec_status\x18\n \x01(\t')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nrank.proto\x12\x08recbruce\"*\n\x07\x44\x61taset\x12\x1f\n\x03msg\x18\x01 \x03(\x0b\x32\x12.recbruce.MsgClass\"\xf0\x04\n\x08MsgClass\x12\x33\n\titem_info\x18\x01 \x03(\x0b\x32 .recbruce.MsgClass.ItemInfoClass\x12\x33\n\tuser_info\x18\x02 \x01(\x0b\x32 .recbruce.MsgClass.UserInfoClass\x1a\xf6\x01\n\rUserInfoClass\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x12\n\nclick_hist\x18\x02 \x03(\t\x12\x11\n\tshow_hist\x18\x03 \x03(\t\x12\x18\n\x10last_click_title\x18\x04 \x01(\t\x12\x15\n\rcluster_codes\x18\x05 \x03(\t\x12\x14\n\x0c\x63luster_code\x18\x06 \x01(\t\x12\x11\n\ttitle_emb\x18\x07 \x03(\t\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x39\n\x0e\x63urr_item_info\x18\xe8\x07 \x01(\x0b\x32 .recbruce.MsgClass.ItemInfoClass\x12\x0e\n\x05patch\x18\xe9\x07 \x03(\x0c\x1a\x80\x02\n\rItemInfoClass\x12\x10\n\x08is_click\x18\x01 \x01(\t\x12\x0f\n\x07is_show\x18\x02 \x01(\t\x12\x15\n\rcluster_codes\x18\x03 \x03(\t\x12\x0b\n\x03nid\x18\x04 \x01(\t\x12\r\n\x05title\x18\x05 \x01(\t\x12\x11\n\trec_start\x18\x06 \x01(\t\x12\x0f\n\x07rec_end\x18\x07 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x08 \x01(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12\x12\n\ntag_values\x18\n \x03(\t\x12\x17\n\x0f\x62\x64_airec_status\x18\x0b \x01(\t\x12\x0e\n\x05patch\x18\xe9\x07 \x03(\x0c\x12\x19\n\x10qu_default_value\x18\xea\x07 \x01(\tB\x19\n\x17\x63om.baidu.acg.imt.proto')
 
 
 
@@ -25,7 +25,7 @@ _MSGCLASS_ITEMINFOCLASS = _MSGCLASS.nested_types_by_name['ItemInfoClass']
 Dataset = _reflection.GeneratedProtocolMessageType('Dataset', (_message.Message,), {
   'DESCRIPTOR' : _DATASET,
   '__module__' : 'rank_pb2'
-  # @@protoc_insertion_point(class_scope:rank_pb.Dataset)
+  # @@protoc_insertion_point(class_scope:recbruce.Dataset)
   })
 _sym_db.RegisterMessage(Dataset)
 
@@ -34,19 +34,19 @@ MsgClass = _reflection.GeneratedProtocolMessageType('MsgClass', (_message.Messag
   'UserInfoClass' : _reflection.GeneratedProtocolMessageType('UserInfoClass', (_message.Message,), {
     'DESCRIPTOR' : _MSGCLASS_USERINFOCLASS,
     '__module__' : 'rank_pb2'
-    # @@protoc_insertion_point(class_scope:rank_pb.MsgClass.UserInfoClass)
+    # @@protoc_insertion_point(class_scope:recbruce.MsgClass.UserInfoClass)
     })
   ,
 
   'ItemInfoClass' : _reflection.GeneratedProtocolMessageType('ItemInfoClass', (_message.Message,), {
     'DESCRIPTOR' : _MSGCLASS_ITEMINFOCLASS,
     '__module__' : 'rank_pb2'
-    # @@protoc_insertion_point(class_scope:rank_pb.MsgClass.ItemInfoClass)
+    # @@protoc_insertion_point(class_scope:recbruce.MsgClass.ItemInfoClass)
     })
   ,
   'DESCRIPTOR' : _MSGCLASS,
   '__module__' : 'rank_pb2'
-  # @@protoc_insertion_point(class_scope:rank_pb.MsgClass)
+  # @@protoc_insertion_point(class_scope:recbruce.MsgClass)
   })
 _sym_db.RegisterMessage(MsgClass)
 _sym_db.RegisterMessage(MsgClass.UserInfoClass)
@@ -55,12 +55,13 @@ _sym_db.RegisterMessage(MsgClass.ItemInfoClass)
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _DATASET._serialized_start=23
-  _DATASET._serialized_end=64
-  _MSGCLASS._serialized_start=67
-  _MSGCLASS._serialized_end=437
-  _MSGCLASS_USERINFOCLASS._serialized_start=183
-  _MSGCLASS_USERINFOCLASS._serialized_end=250
-  _MSGCLASS_ITEMINFOCLASS._serialized_start=253
-  _MSGCLASS_ITEMINFOCLASS._serialized_end=437
+  DESCRIPTOR._serialized_options = b'\n\027com.baidu.acg.imt.proto'
+  _DATASET._serialized_start=24
+  _DATASET._serialized_end=66
+  _MSGCLASS._serialized_start=69
+  _MSGCLASS._serialized_end=693
+  _MSGCLASS_USERINFOCLASS._serialized_start=188
+  _MSGCLASS_USERINFOCLASS._serialized_end=434
+  _MSGCLASS_ITEMINFOCLASS._serialized_start=437
+  _MSGCLASS_ITEMINFOCLASS._serialized_end=693
 # @@protoc_insertion_point(module_scope)

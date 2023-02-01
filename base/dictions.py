@@ -11,7 +11,7 @@ for s in d:
 
 
 del d['b']
-print(d.values())
+print(f"-----{d.values()}")
 
 d.clear()
 print(d)

@@ -38,3 +38,7 @@ print(is_num(s))
 
 t = "('a', 'b')"
 print(type(eval(t)))
+
+a = ["a", "b", "c"]
+print(eval('[{"tt": "abc"}]'))
+print(type(eval('[{"tt": "abc"}]')))

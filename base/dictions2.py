@@ -16,5 +16,5 @@ for v in d.values():
 for k, v in enumerate(d):
     print(f"k={k}, v={v}")
 e = {'mike': 15, 'bruce': 30}
-d.update(e)
+print(type(d.update(e)))
 print(d)
