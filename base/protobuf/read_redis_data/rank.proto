@@ -1,7 +1,5 @@
 syntax = "proto2";
-package recbruce;
-
-option java_package = "com.baidu.acg.imt.proto";
+package rank_recannnew_pb;
 message Dataset {
   repeated MsgClass msg = 1;
 }
@@ -10,11 +8,17 @@ message MsgClass{
     optional string uid = 1;
     repeated string click_hist = 2;
     repeated string show_hist = 3;
-    optional string last_click_title = 4;
-    repeated string cluster_codes = 5;
-    optional string cluster_code = 6;
-    repeated string title_emb = 7;
-    repeated string tags = 8;
+    repeated string tags_hist = 4;
+    repeated string baidu_labels_hist = 5;
+    optional string last_click_nid = 6;
+    optional string last_click_title = 7;
+    repeated string cluster_codes = 8;
+    repeated string title_emb = 9;
+    repeated string tags = 10;
+    repeated string click_filter_hist = 11;
+    repeated string show_filter_hist = 12;
+    optional string city = 13;
+    repeated string channels = 14;
     optional ItemInfoClass curr_item_info = 1000;
     repeated bytes patch = 1001;
   }
@@ -22,14 +26,16 @@ message MsgClass{
     optional string is_click = 1;
     optional string is_show = 2;
     repeated string cluster_codes = 3;
-    optional string nid = 4;
-    optional string title = 5;
-    optional string rec_start = 6;
-    optional string rec_end = 7;
-    optional string content = 8;
-    repeated string tags = 9;
-    repeated string tag_values = 10;
-    optional string bd_airec_status = 11;
+    repeated string title_emb = 4;
+    optional string nid = 5;
+    optional string title = 6;
+    optional int64 rec_start = 7;
+    optional int64 rec_end = 8;
+    optional int64 ts = 9;
+    optional string content = 10;
+    optional string city_code = 11;
+    repeated string city_code_list = 12;
+    optional string bd_airec_status = 13;
     repeated bytes patch = 1001;
     optional string qu_default_value = 1002;
   }
